@@ -1,62 +1,286 @@
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background: #0f172a;
-    color: #f1f5f9;
-    line-height: 1.6;
+body{
+  background:#0f172a;
+  color:white;
 }
 
-header {
-    background: linear-gradient(90deg, #2563eb, #22c55e);
-    padding: 20px;
-    text-align: center;
-    color: white;
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px;
+  background:#111827;
+  position:sticky;
+  top:0;
+  z-index:1000;
 }
 
-main {
-    padding: 20px;
+.logo{
+  font-size:28px;
+  font-weight:bold;
+  color:#facc15;
 }
 
-section {
-    background: #1e293b;
-    margin-bottom: 20px;
-    padding: 15px;
-    border-radius: 10px;
-    transition: 0.3s;
+nav a{
+  color:white;
+  margin:0 15px;
+  text-decoration:none;
 }
 
-section:hover {
-    transform: scale(1.02);
-    background: #334155;
+.hero{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:80px 10%;
+  flex-wrap:wrap;
 }
 
-h2 {
-    margin-bottom: 10px;
-    color: #38bdf8;
+.hero-text{
+  max-width:500px;
 }
 
-h3 {
-    margin-top: 10px;
-    color: #22c55e;
+.hero-text h1{
+  font-size:50px;
+  margin-bottom:20px;
 }
 
-ul {
-    margin-left: 20px;
+.hero-text p{
+  color:#cbd5e1;
+  margin-bottom:30px;
 }
 
-li {
-    margin-bottom: 5px;
+.hero-buttons button{
+  padding:14px 22px;
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  margin-right:10px;
+  font-weight:bold;
 }
 
-footer {
-    text-align: center;
-    padding: 15px;
-    background: #020617;
-    margin-top: 20px;
+.primary{
+  background:#2563eb;
+  color:white;
+}
+
+.secondary{
+  background:#facc15;
+}
+
+.promo{
+  background:#22c55e;
+  color:white;
+}
+
+.cashback-card{
+  background:linear-gradient(135deg,#2563eb,#1e3a8a);
+  padding:40px;
+  border-radius:20px;
+  width:320px;
+  box-shadow:0 0 20px rgba(0,0,0,.4);
+}
+
+.wallet,
+.promotions,
+.dashboard,
+.ranking,
+.canteen,
+.coupons,
+.qrcode,
+.chat{
+  padding:60px 10%;
+}
+
+.wallet-info{
+  display:flex;
+  gap:20px;
+  margin-top:20px;
+}
+
+.balance,
+.xp{
+  background:#1e293b;
+  padding:30px;
+  border-radius:20px;
+  flex:1;
+}
+
+.progress-container{
+  margin-top:30px;
+}
+
+.progress-bar{
+  background:#334155;
+  height:20px;
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.progress{
+  width:60%;
+  height:100%;
+  background:#22c55e;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  margin-top:30px;
+}
+
+.card{
+  background:#1e293b;
+  border-radius:20px;
+  overflow:hidden;
+  transition:.3s;
+  position:relative;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+}
+
+.card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+.card h3,
+.card p,
+.card button{
+  margin:15px;
+}
+
+.card button{
+  padding:12px;
+  width:calc(100% - 30px);
+  border:none;
+  background:#2563eb;
+  color:white;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+.badge{
+  position:absolute;
+  top:10px;
+  left:10px;
+  background:#ef4444;
+  padding:6px 10px;
+  border-radius:10px;
+  font-size:12px;
+}
+
+.cashback{
+  background:#22c55e;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+  margin:30px 0;
+}
+
+.stat-box{
+  background:#1e293b;
+  padding:30px;
+  border-radius:20px;
+}
+
+.ranking-list .user{
+  background:#1e293b;
+  padding:20px;
+  margin-top:10px;
+  border-radius:15px;
+}
+
+form{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+input,
+button{
+  padding:15px;
+  border:none;
+  border-radius:12px;
+}
+
+form button{
+  background:#2563eb;
+  color:white;
+  cursor:pointer;
+}
+
+.coupon-container{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.coupon{
+  background:#1e293b;
+  padding:30px;
+  border-radius:20px;
+  flex:1;
+}
+
+.qrcode img{
+  margin-top:20px;
+}
+
+.chat-box{
+  background:#1e293b;
+  padding:20px;
+  border-radius:20px;
+  margin-bottom:20px;
+}
+
+.notification{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#22c55e;
+  padding:20px;
+  border-radius:15px;
+  display:none;
+  animation:slide .5s ease;
+}
+
+@keyframes slide{
+  from{
+    transform:translateX(100%);
+  }
+
+  to{
+    transform:translateX(0);
+  }
+}
+
+.dark{
+  background:white;
+  color:black;
+}
+
+@media(max-width:768px){
+
+  .hero{
+    flex-direction:column;
+    gap:40px;
+  }
+
+  .hero-text h1{
+    font-size:36px;
+  }
+
 }
