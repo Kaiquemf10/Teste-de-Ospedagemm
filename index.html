@@ -1,73 +1,235 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Perfil de Kaique</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UniCash</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-
 <body>
 
-<header>
-    <h1>Perfil de Kaique</h1>
-    <p>Bem-vindo à minha página pessoal</p>
-</header>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">💰 UniCash</div>
 
-<main>
+    <nav>
+      <a href="#">Início</a>
+      <a href="#promocoes">Promoções</a>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#ranking">Ranking</a>
+    </nav>
 
-<section>
-    <h2>Introdução</h2>
-    <p>
-        Olá! Meu nome é Kaique. Sou de Salvador - Bahia e tenho interesse em
-        tecnologia, jogos e futebol. Estou estudando para desenvolver novos
-        conhecimentos e melhorar minhas habilidades na área de tecnologia.
-    </p>
-</section>
+    <button id="darkModeBtn">🌙</button>
+  </header>
 
-<section>
-    <h2>Hobbies</h2>
-    <ul>
-        <li>Jogar futebol</li>
-        <li>Jogar videogame</li>
-        <li>Assistir conteúdos sobre tecnologia</li>
-        <li>Criar conteúdos de jogos</li>
-    </ul>
-</section>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Compre seu lanche e ganhe dinheiro de volta</h1>
+      <p>
+        Cashback, promoções inteligentes e recompensas exclusivas
+        dentro da sua faculdade.
+      </p>
 
-<section>
-    <h2>Gostos e Desgostos</h2>
+      <div class="hero-buttons">
+        <button class="primary">Entrar</button>
+        <button class="secondary">Criar Conta</button>
+        <button class="promo">Ver Promoções</button>
+      </div>
+    </div>
 
-    <h3>Gostos</h3>
-    <ul>
-        <li>Futebol</li>
-        <li>Jogos eletrônicos</li>
-        <li>Tecnologia</li>
-        <li>Aprender coisas novas</li>
-    </ul>
+    <div class="cashback-card">
+      <h2>🔥 Cashback Ativo</h2>
+      <p>10% em todos os combos hoje</p>
+      <span>Ganhe até R$20 por semana</span>
+    </div>
+  </section>
 
-    <h3>Desgostos</h3>
-    <ul>
-        <li>Desorganização</li>
-        <li>Falta de respeito</li>
-        <li>Internet lenta</li>
-    </ul>
-</section>
+  <!-- CARTEIRA -->
+  <section class="wallet">
+    <h2>💳 Minha Carteira</h2>
 
-<section>
-    <h2>Expectativas para o curso</h2>
-    <ul>
-        <li>
-            Quero aprimorar meus conhecimentos na área de tecnologia para desenvolver
-            sites e aplicativos, e conseguir um bom emprego no futuro.
-        </li>
-    </ul>
-</section>
+    <div class="wallet-info">
+      <div class="balance">
+        <h3>Saldo</h3>
+        <p id="saldo">R$ 0,00</p>
+      </div>
 
-</main>
+      <div class="xp">
+        <h3>XP</h3>
+        <p id="xp">0 XP</p>
+      </div>
+    </div>
 
-<footer>
-    <p>© 2026 - Kaique</p>
-</footer>
+    <div class="progress-container">
+      <p>Faltam R$15 para liberar um combo grátis</p>
+      <div class="progress-bar">
+        <div class="progress"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMOÇÕES -->
+  <section id="promocoes" class="promotions">
+    <h2>🔥 Promoções Inteligentes</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <span class="badge">Evite desperdício</span>
+        <img src="https://images.unsplash.com/photo-1606755962773-d324e0a13086?q=80&w=800" alt="">
+        <h3>Coxinha</h3>
+        <p>50% OFF</p>
+        <button onclick="comprar(10)">
+          Comprar
+        </button>
+      </div>
+
+      <div class="card">
+        <span class="badge cashback">Cashback dobrado</span>
+        <img src="https://images.unsplash.com/photo-1551024709-8f23befc6cf7?q=80&w=800" alt="">
+        <h3>Refrigerante</h3>
+        <p>20% Cashback</p>
+        <button onclick="comprar(15)">
+          Comprar
+        </button>
+      </div>
+
+      <div class="card">
+        <span class="badge">Últimas unidades</span>
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800" alt="">
+        <h3>Combo Universitário</h3>
+        <p>R$18,99</p>
+        <button onclick="comprar(18)">
+          Comprar
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DASHBOARD -->
+  <section id="dashboard" class="dashboard">
+    <h2>📊 Painel Administrativo</h2>
+
+    <div class="stats">
+
+      <div class="stat-box">
+        <h3>Usuários</h3>
+        <p>2.341</p>
+      </div>
+
+      <div class="stat-box">
+        <h3>Total Vendido</h3>
+        <p>R$52.000</p>
+      </div>
+
+      <div class="stat-box">
+        <h3>Lucro</h3>
+        <p>R$8.400</p>
+      </div>
+
+      <div class="stat-box">
+        <h3>Cashback</h3>
+        <p>R$3.120</p>
+      </div>
+
+    </div>
+
+    <canvas id="grafico"></canvas>
+  </section>
+
+  <!-- RANKING -->
+  <section id="ranking" class="ranking">
+    <h2>🏆 Ranking dos Alunos</h2>
+
+    <div class="ranking-list">
+      <div class="user">
+        🥇 João - 4200 XP
+      </div>
+
+      <div class="user">
+        🥈 Maria - 3890 XP
+      </div>
+
+      <div class="user">
+        🥉 Lucas - 3100 XP
+      </div>
+    </div>
+  </section>
+
+  <!-- DASHBOARD CANTINA -->
+  <section class="canteen">
+    <h2>🍔 Área da Lanchonete</h2>
+
+    <form id="produtoForm">
+
+      <input type="text" placeholder="Nome do produto" required>
+
+      <input type="number" placeholder="Preço" required>
+
+      <input type="number" placeholder="Quantidade" required>
+
+      <input type="date" required>
+
+      <input type="file">
+
+      <button type="submit">
+        Cadastrar Produto
+      </button>
+
+    </form>
+  </section>
+
+  <!-- CUPONS -->
+  <section class="coupons">
+    <h2>🎁 Cupons e Benefícios</h2>
+
+    <div class="coupon-container">
+
+      <div class="coupon">
+        <h3>10% OFF</h3>
+        <p>Use no próximo pedido</p>
+      </div>
+
+      <div class="coupon">
+        <h3>Combo Grátis</h3>
+        <p>Após 5 compras</p>
+      </div>
+
+      <div class="coupon">
+        <h3>VIP Cashback</h3>
+        <p>Cashback em dobro</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- QR CODE -->
+  <section class="qrcode">
+    <h2>📱 QR Code</h2>
+
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=UniCash" alt="QR Code">
+  </section>
+
+  <!-- CHAT -->
+  <section class="chat">
+    <h2>💬 Chat da Cantina</h2>
+
+    <div class="chat-box">
+      <div class="message">Olá! Seu pedido já está sendo preparado 🍔</div>
+    </div>
+
+    <input type="text" placeholder="Digite sua mensagem...">
+  </section>
+
+  <!-- NOTIFICAÇÃO -->
+  <div id="notification" class="notification">
+    🔥 Cashback dobrado disponível agora!
+  </div>
+
+  <script src="script.js"></script>
 
 </body>
-</html>
+            </html>
